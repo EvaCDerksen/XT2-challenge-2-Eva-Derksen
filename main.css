@@ -1,0 +1,126 @@
+
+body {
+	font-family: "Early Gameboy", sans-serif;
+	color: white;
+	margin: 0;
+	padding: 0;
+	/* margin + padding op 0 zodat in elke webbrowser je design hetzelfde eruit komt te zien */
+	
+	text-align: center;
+	font-size: 30px;
+
+	/* Altijd je achtergrond een kleur geven, wanneer je image niet werkt valt hij terug op deze kleur*/
+	background-color: white;
+}
+
+/* Opmaak klok */
+#clock {
+	font-weight: 300;
+	font-size: 80px;
+}
+
+.grid-item-logo img {
+	max-height: 50px;
+}
+
+/* test 
+#color { 
+    background-color: rgb(0,0,0); 
+    height: 100px;
+    width: 100px;
+  -webkit-transition: background-color 0.3s ease-out;
+} */
+
+.grid-items {
+  text-align: center;
+  padding: 30px;
+}
+
+/* Background image */
+.sunrise {
+	background: url('images/sunrise.png') no-repeat center fixed;
+	background-size: cover;
+}
+.day {
+	background: url('images/day.png') no-repeat center fixed;
+	background-size: cover;
+}
+.sundown {
+ 	background: url('images/sundown.png') no-repeat center fixed;
+ 	background-size: cover;
+}
+.night {
+	background: url('images/night.png') no-repeat center fixed;
+	background-size: cover;
+}
+
+/* CSS Grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  	'section-1' 
+  	'section-2' 
+  	'section-3';
+
+  	align-content: center;
+}
+
+.grid-item-clock {
+	grid-area: section-2;
+}
+
+.grid-item-logo {
+	grid-area: section-1;
+}
+
+.grid-item-text {
+	grid-area: section-3;
+}
+
+/* Grid centreren */
+	body, html {
+		display: grid;
+		height: 100%;
+	}
+
+	.grid-container {
+		margin: auto;
+	}
+
+/* Door hier je @media te plaatsen hou je meer overzicht in je HTML document */
+/* Verder raad ik het aan om van klein naar groot te gaan -> Mobile first */
+
+/* smartphone */
+@media screen and (min-width: 375px) {
+}
+
+/*Tablet*/
+@media screen and (min-width: 768px) {
+	.grid-container {
+		display: grid;
+  		grid-template-columns: 1fr 1fr 1fr;
+  		grid-template-rows: 1fr;
+  		grid-template-areas: 
+  			'section-1 section-2 section-3';
+	}
+
+	.grid-items {
+		margin-top: 120px;
+	}
+}
+
+/* Laptop */
+@media screen and (max-width: 992px) {
+	.grid-container {
+		    
+	}
+}
+
+/* Computer */
+@media screen and (max-width: 1200px) {
+	.grid-container {
+		
+	}
+}
